@@ -9,16 +9,16 @@ async function fetchData(url, number){
             value--;
             fetchData(url, value)
     }
-    const data = response.json();
+    const data = await response.json();
     console.log(data)
     return data
 }
 catch{
-    throw new Error("Error occured")
+    throw new Errow("Error occured")
 }
 }
 
-var promise = fetchData("test.json", 3)
+var promise = fetchData("https://jsonplaceholder.typicode.com/todos/1", 3)
 console.log(promise)
 //  .then(data => console.log(data))
 //  .catch((err) => {
