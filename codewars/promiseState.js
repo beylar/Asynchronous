@@ -7,8 +7,6 @@ async function getState(promise) {
         return "rejected"; 
     }
 }
-
-
 function getState(promise) {
     const pending = new Promise(resolve => setTimeout(resolve, 0, "pending"));
     return Promise.race([promise, pending])
