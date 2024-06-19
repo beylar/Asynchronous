@@ -7,3 +7,5 @@ function display(){
 }
 
 invoking(display)
+
+//Write a JavaScript program that converts a callback-based function to a Promise-based function.
