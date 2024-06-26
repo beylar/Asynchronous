@@ -116,3 +116,21 @@ async function forecast(countryName){
     }
 }
 forecast("Rwanda")
+
+
+async function forecast(countryName){
+    const response = await fetch(`https://restcountries.com/v3.1/name/${countryName}`)
+    if(!response.ok){
+        throw new Error("Aubin is dumb!")
+    }
+    const data = await response.json()
+    return data[0]
+}
+forecast("Rwanda").then((info) => {
+    console.log(`The latitude is ${info["latlng"][0]}`)
+    console.log(`The latitude is ${info["latlng"][1]}`)
+    console.log(`The capital city is ${info["capital"]}`)
+    const weather = fetch(`https://api.open-meteo.com/v1/forecast?latitude=${info["latlng"][0]}&longitude=${info["latlng"][1]}&current_weather=true`)
+    const output = JSON.parse(weather)
+    console.log(`The temperature is ${output.current_weather["temperature"]}`)
+})
