@@ -72,3 +72,21 @@ const timer1 = setTimeout(() => {
 const timer2 = setTimeout(() => {
     console.log('timer2')
 }, 0);
+
+
+//exercise 7
+console.log("start");
+const promise3 = Promise.resolve().then(() => {
+    console.log('Promise 3');
+    const timer2 = setTimeout(() => {
+        console.log('timer 2');
+    }, 0);
+})
+
+const timer3 = setTimeout(() => {
+    console.log('timer 3');
+    const promise2 = Promise.resolve().then(() => {
+        console.log('promise 2');
+    })
+}, 0);
+console.log("end");
