@@ -14,3 +14,19 @@ async function timing(url){
 }
 timing("https://jsonplaceholder.typicode.com/posts")
 
+//Implement an asynchronous function that processes a large dataset in smaller chunks using `setTimeout` 
+//to avoid blocking the main thread.
+
+async function avoidBlocking(url){
+    try{
+        const response = await fetch(url)
+        const data = await response.json()
+        console.log(data)
+    }
+    catch(error){
+        console.log(`Error occured ${error}`)
+    }
+}
+setTimeout(() => {
+        avoidBlocking("https://jsonplaceholder.typicode.com/posts")
+    }, 2000)
