@@ -20,4 +20,4 @@ async function fetching (url){
         }
     })
 }
-fetching("https://jsonplaceholder.typicode.com/posts")
+fetching("https://jsonplaceholder.typicode.com/todos")
