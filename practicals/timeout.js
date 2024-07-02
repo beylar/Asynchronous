@@ -114,3 +114,19 @@ const guessTheOutPut =() => {
     console.log('where do i fall')
   }
   console.log(guessTheOutPut())
+
+function compile(){
+    let count = 0;
+    console.log("start")
+    const timeof = setInterval(() => {
+      count++
+      console.log(count)
+    }, 1000)
+    setTimeout(function() {
+      clearInterval(timeof)
+      console.log("Timed out")
+    }, 3000);
+    
+    console.log("end")
+  }
+  compile()
